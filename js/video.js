@@ -19,11 +19,13 @@ function pauseVid() {
 
 function decreaseSpeed() { 
 	var vid = document.getElementById("myVideo");
+	// vid.playbackRate *= .8;
   	console.log("Speed is " + (vid.playbackRate *= 0.8));
 } 
 
 function increaseSpeed() {
 	var vid1= document.getElementById("myVideo");
+	// vid.playbackRate *= 1.25;
 	console.log("Speed is "+ (vid1.playbackRate *= 1.25));
 } 
 

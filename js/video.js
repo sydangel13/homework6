@@ -19,14 +19,12 @@ function pauseVid() {
 
 function decreaseSpeed() { 
 	var vid = document.getElementById("myVideo");
-	vid.playbackRate -= 0.2;
-  	console.log("Speed is " + video.playbackRate);
+  	console.log("Speed is " + (vid.playbackRate *= 0.8));
 } 
 
 function increaseSpeed() {
 	var vid1= document.getElementById("myVideo");
-	vid1.playbackRate +=1.25;
-	console.log("Speed is "+ video.playbackRate);
+	console.log("Speed is "+ (vid1.playbackRate *= 1.25));
 } 
 
 function skipAhead() {
@@ -60,13 +58,14 @@ function changeVolume() {
 }
        
 function gray() { 
-	gr_color = document.body.style.filter = "grayscale(100%)";
+	video.classList.add("grayscale")
 	// gr_color = "grayscale(100%)";
 	console.log("In grayscale");
 }
 
 function color() {
-	multicolor_filter = document.body.style.filter = "grayscale(0%)";
+	video.classList.remove("grayscale")
+	// multicolor_filter = document.body.style.filter = "grayscale(0%)";
 	console.log("In color") 
 }
 

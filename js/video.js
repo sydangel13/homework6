@@ -5,6 +5,9 @@ function getVid(){
 }
 
 function playVid() { 
+	var vid = document.getElementById("myVideo")
+	vid.loop = true 
+	vid.load()
 	video.play();
 	let vol = document.querySelector("#volume")
 	vol.innerHTML=(video.volume * 100 + "%");
@@ -19,20 +22,31 @@ function pauseVid() {
 
 function decreaseSpeed() { 
 	var vid = document.getElementById("myVideo");
+		if (vid.playbackRate > 0.06871947673600004){
+			vid.playbackRate *= .8;
+		}
+		else{
+			vid.playbackRate = 1.0;
+		}
 	// vid.playbackRate *= .8;
-  	console.log("Speed is " + (vid.playbackRate *= 0.8));
+  	console.log("Speed is " + (vid.playbackRate));
 } 
 
 function increaseSpeed() {
 	var vid1= document.getElementById("myVideo");
-	// vid.playbackRate *= 1.25;
-	console.log("Speed is "+ (vid1.playbackRate *= 1.25));
+		if (vid1.playbackRate > 14.551915228366862){
+			vid1.playbackRate *= 1.25;
+		}
+		else{
+			vid1.playbackRate = 1.0
+		}
+	console.log("Speed is "+ (vid1.playbackRate));
 } 
 
 function skipAhead() {
 	var vid2 = document.getElementById("myVideo");
 	vid2.currentTime += 60;
-	if (video.ended == true){
+	if (video.ended = true){
 		video.play()
 	}
 	console.log("Current location is "+  video.currentTime);
@@ -41,14 +55,14 @@ function skipAhead() {
 function mute() { 
 	if (video.muted){
 		document.getElementById("mute").innerHTML = "Mute";
-		console.log("Changing to Unmuted");
+		console.log("Changing to Unmute");
 		video.muted = false;
 		
 	}
 	else{
-		document.getElementById("mute").innerHTML= "Muted";
+		document.getElementById("mute").innerHTML= "Unmute";
 		video.muted = true;
-		console.log("Changed to Muted");
+		console.log("Changed to Mute");
 	}
 }
 
@@ -60,13 +74,17 @@ function changeVolume() {
 }
        
 function gray() { 
-	video.classList.add("grayscale")
+	var gray1 = document.getElementById("myVideo");
+	gray1.classList.add("grayscale")
+	// video.classList.add("grayscale")
 	// gr_color = "grayscale(100%)";
 	console.log("In grayscale");
 }
 
 function color() {
-	video.classList.remove("grayscale")
+	var color1 = document.getElementById("myVideo")
+	color1.classList.remove("grayscale")
+	// video.classList.remove("grayscale")
 	// multicolor_filter = document.body.style.filter = "grayscale(0%)";
 	console.log("In color") 
 }

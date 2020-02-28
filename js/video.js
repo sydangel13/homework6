@@ -33,14 +33,14 @@ function decreaseSpeed() {
 } 
 
 function increaseSpeed() {
-	var vid1= document.getElementById("myVideo");
-		if (vid1.playbackRate > 14.551915228366862){
-			vid1.playbackRate *= 1.25;
+	var vid= document.getElementById("myVideo");
+		if (vid.playbackRate < 14.551915228366852){
+			vid.playbackRate *= 1.25;
 		}
 		else{
-			vid1.playbackRate = 1.0
+			vid.playbackRate = 1.0
 		}
-	console.log("Speed is "+ (vid1.playbackRate));
+	console.log("Speed is "+ (vid.playbackRate));
 } 
 
 function skipAhead() {
